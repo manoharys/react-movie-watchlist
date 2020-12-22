@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const App = () => {
+function App() {
   return (
     <div>
-      Movie-watchlist...
+      Hello
     </div>
   )
 }
+
+export default App
