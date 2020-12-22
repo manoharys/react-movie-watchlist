@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ResultCard } from "./ResultCard";
 import axios from "axios";
 
 //Api key
@@ -23,7 +24,6 @@ export const Add = () => {
       .then((res) => {
         console.log(res);
         setResults(res.data.results);
-   
       })
       .catch((err) => console.log(err));
   }, [query]);
@@ -37,12 +37,21 @@ export const Add = () => {
               type="text"
               placeholder="Search for a movie..."
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => {
+                e.preventDefault();
+                setQuery(e.target.value);
+              }}
             />
           </div>
-          {results.map((movie) => (
-            <li>{movie.id + movie.title}</li>
-          ))}
+          {results.length > 0 && (
+            <ul className="results">
+              {results.map((movie) => (
+                <li key={movie.id}>
+                  <ResultCard movie={movie} />
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </div>
