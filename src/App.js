@@ -6,10 +6,11 @@ import { Add } from "./components/Add";
 import "./lib/font-awesome/css/all.min.css";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {GlobalContextProvider} from "./context/GlobalState";
 
 function App() {
   return (
-    <div>
+    <GlobalContextProvider>
       <Router>
         <Header />
 
@@ -25,7 +26,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </div>
+      </GlobalContextProvider>
   );
 }
 
