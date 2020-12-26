@@ -17,9 +17,27 @@ export const reducer = (state, action) => {
 
     case ACTIONS.ADD_TO_WATCHED:
       return {
-        watchList: state.watchList.filter((o) => o.id != action.payLoad),
-        watched: state.watchList.filter((o) => o.id == action.payLoad),
+        watchList: state.watchList.filter((o) => o.id != action.payLoad.id),
+        watched: [
+          action.payLoad,
+          ...state.watched
+        ],
       };
+
+    case ACTIONS.REMOVE_WATCHED:
+      return {
+        ...state,
+        watched: state.watched.filter((o) => o.id != action.payLoad),
+      };       
+      
+    case ACTIONS.FROM_WATCHED_TO_WATCHLIST:
+      return{
+        watched: state.watchList.filter((o) => o.id != action.payLoad.id),
+        watchList: [
+          action.payLoad,
+          ...state.watchList
+        ]
+      }
 
     default:
       return state;
