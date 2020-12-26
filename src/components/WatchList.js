@@ -3,9 +3,7 @@ import { globalContext } from "../context/GlobalState";
 import {MovieCard}  from "./MovieCard";
 
 export const WatchList = () => {
-  const { watchList } = useContext(globalContext); 
-
-  
+  const { watchList } = useContext(globalContext);
 
   return (
     <div className="movie-page">

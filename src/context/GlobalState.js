@@ -5,7 +5,9 @@ const initialState = {
   watchList: localStorage.getItem("watchList")
     ? JSON.parse(localStorage.getItem("watchList"))
     : [],
-  watched: [],
+    watched: localStorage.getItem("watched")
+    ? JSON.parse(localStorage.getItem("watched"))
+    : []
 };
 
 export const globalContext = React.createContext();
@@ -39,7 +41,7 @@ export const GlobalContextProvider = (props) => {
 
   return (
     <globalContext.Provider
-      value={{ watchList: state.watchList, watched: state.watched, addMovie, removeMovie: removeMovie }}
+      value={{ watchList: state.watchList, watched: state.watched, addToWatched, addMovie, removeMovie: removeMovie }}
     >
       {props.children}
     </globalContext.Provider>
