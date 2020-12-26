@@ -2,9 +2,12 @@ import React from "react";
 import {globalContext} from "../context/GlobalState";
 
 export const ResultCard = ({ movie }) => {
-  const {watchList, addMovie} = React.useContext(globalContext);
-  let watchListDisable = watchList.find(o=>o.id === movie.id);
-  watchListDisable = watchListDisable ? "disable" : "";
+  const {watchList, addMovie, watched} = React.useContext(globalContext);
+  let watchListDisableOne = watchList.find(o=>o.id === movie.id); 
+  let watchListDisableTwo = watched.find(o=>o.id === movie.id);
+  let watchListDisable = (watchListDisableOne || watchListDisableTwo) ? "disable" : "";
+  let buttonText = (watchListDisableOne ? "Added To WatchList" : (watchListDisableTwo ? "Watched" : "Add to WatchList")) 
+
   return (
     <div className="result-card">
       <div className="poster-wrapper">
@@ -26,7 +29,7 @@ export const ResultCard = ({ movie }) => {
           </h4>
         </div>
         <div className="controls">
-          <button disabled={watchListDisable} className="btn" onClick={()=>addMovie(movie)}>Add to WatchList</button>
+          <button disabled={watchListDisable} className="btn" onClick={()=>addMovie(movie)}>{buttonText}</button>
         </div>
       </div>
     </div>

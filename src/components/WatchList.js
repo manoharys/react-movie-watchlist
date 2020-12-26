@@ -9,8 +9,8 @@ export const WatchList = () => {
     <div className="movie-page">
       <div className="container">
         <div className="header">
-          {/* <div className="heading">My WatchList</div> */}
-
+           <h1 className="heading">My watchList</h1>
+         </div>
           {watchList.length > 0 ? (
             <div className="movie-grid">
               {watchList.map((movie) => (
@@ -20,8 +20,9 @@ export const WatchList = () => {
           ) : (
             <h2 className="no-movies">No movies</h2>
           )}
+
         </div>
       </div>
-    </div>
+    
   );
 };

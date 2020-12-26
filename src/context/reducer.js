@@ -32,11 +32,12 @@ export const reducer = (state, action) => {
       
     case ACTIONS.FROM_WATCHED_TO_WATCHLIST:
       return{
-        watched: state.watchList.filter((o) => o.id != action.payLoad.id),
         watchList: [
           action.payLoad,
           ...state.watchList
-        ]
+        ],
+        watched: state.watched.filter((o) => o.id != action.payLoad.id),
+     
       }
 
     default:

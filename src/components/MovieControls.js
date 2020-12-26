@@ -2,7 +2,12 @@ import React from "react";
 import { globalContext } from "../context/GlobalState";
 
 export default function MovieControls({ type, movie }) {
-  const { removeMovie, addToWatched, removeWatched, watchedToWatchList } = React.useContext(globalContext);
+  const {
+    removeMovie,
+    addToWatched,
+    removeWatched,
+    watchedToWatchList,
+  } = React.useContext(globalContext);
 
   return (
     <div className="inner-card-controls">
@@ -19,10 +24,13 @@ export default function MovieControls({ type, movie }) {
 
       {type === "watched" && (
         <>
-          <button className="ctrl-btn">
-            <i className="fa-fw far fa-eye-slash" onClick={()=> watchedToWatchList(movie)}></i>
+          <button
+            className="ctrl-btn"
+            onClick={() => watchedToWatchList(movie)}
+          >
+            <i className="fa-fw far fa-eye-slash"></i>
           </button>
-          <button className="ctrl-btn" onClick={()=>removeWatched(movie.id)}>
+          <button className="ctrl-btn" onClick={() => removeWatched(movie.id)}>
             <i className="fa-fw fa fa-times"></i>
           </button>
         </>
