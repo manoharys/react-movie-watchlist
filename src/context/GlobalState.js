@@ -12,6 +12,8 @@ export const globalContext = React.createContext();
 
 export const ACTIONS = {
   ADD_TO_WATCHLIST: "addToWatchList",
+  REMOVE_WATCHLIST: "removeWatchList",
+  ADD_TO_WATCHED: "addToWatched"
 };
 
 export const GlobalContextProvider = (props) => {
@@ -27,9 +29,17 @@ export const GlobalContextProvider = (props) => {
     dispatch({ type: ACTIONS.ADD_TO_WATCHLIST, payLoad: movie });
   };
 
+  const removeMovie = (id) => {
+    dispatch({type: ACTIONS.REMOVE_WATCHLIST, payLoad: id})
+  }
+
+  const addToWatched = (id)=>{
+    dispatch({type: ACTIONS.ADD_TO_WATCHED, payLoad: id});
+  }
+
   return (
     <globalContext.Provider
-      value={{ watchList: state.watchList, watched: state.watched, addMovie }}
+      value={{ watchList: state.watchList, watched: state.watched, addMovie, removeMovie: removeMovie }}
     >
       {props.children}
     </globalContext.Provider>

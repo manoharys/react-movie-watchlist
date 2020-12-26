@@ -3,14 +3,15 @@ import { globalContext } from "../context/GlobalState";
 import {MovieCard}  from "./MovieCard";
 
 export const WatchList = () => {
-  const { watchList } = useContext(globalContext);
+  const { watchList } = useContext(globalContext); 
 
+  
 
   return (
     <div className="movie-page">
       <div className="container">
         <div className="header">
-          <div className="heading">My WatchList</div>
+          {/* <div className="heading">My WatchList</div> */}
 
           {watchList.length > 0 ? (
             <div className="movie-grid">
