@@ -20,7 +20,7 @@ export const GlobalContextProvider = (props) => {
   useEffect(() => {
     localStorage.setItem("watchList", JSON.stringify(state.watchList));
     localStorage.setItem("watched", JSON.stringify(state.watched));
-    console.log(JSON.parse(localStorage.getItem("watchList")));
+    // console.log(JSON.parse(localStorage.getItem("watchList")));
   }, [state]);
 
   const addMovie = (movie) => {
