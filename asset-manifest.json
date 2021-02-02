@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/react-movie-watchlist/static/css/main.4c8845cc.chunk.css",
+    "main.js": "/react-movie-watchlist/static/js/main.f5519d91.chunk.js",
+    "main.js.map": "/react-movie-watchlist/static/js/main.f5519d91.chunk.js.map",
+    "runtime-main.js": "/react-movie-watchlist/static/js/runtime-main.05654cd1.js",
+    "runtime-main.js.map": "/react-movie-watchlist/static/js/runtime-main.05654cd1.js.map",
+    "static/js/2.03cc336e.chunk.js": "/react-movie-watchlist/static/js/2.03cc336e.chunk.js",
+    "static/js/2.03cc336e.chunk.js.map": "/react-movie-watchlist/static/js/2.03cc336e.chunk.js.map",
+    "index.html": "/react-movie-watchlist/index.html",
+    "static/css/main.4c8845cc.chunk.css.map": "/react-movie-watchlist/static/css/main.4c8845cc.chunk.css.map",
+    "static/js/2.03cc336e.chunk.js.LICENSE.txt": "/react-movie-watchlist/static/js/2.03cc336e.chunk.js.LICENSE.txt",
+    "static/media/all.min.css": "/react-movie-watchlist/static/media/fa-solid-900.a940d584.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.05654cd1.js",
+    "static/js/2.03cc336e.chunk.js",
+    "static/css/main.4c8845cc.chunk.css",
+    "static/js/main.f5519d91.chunk.js"
+  ]
+}
