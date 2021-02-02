@@ -1,6 +1,6 @@
 # movie-watchlist
 ##### movie watchlist using React, implementing React Hooks, Context API, storing data in localStorage and fetching data from an external API (The Movie Database).
-. - <a href='https://facetime-99.herokuapp.com/'> check here </a>
+. - <a href='https://manoharys.github.io/react-movie-watchlist//'> check here </a>
   
 ---
 
